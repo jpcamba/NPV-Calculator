@@ -1,0 +1,30 @@
+{
+  "name": "npv-calculator",
+  "version": "1.0.0",
+  "description": "NPV Calculator",
+  "main": "./scripts/controller.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpcamba/NPV-Calculator.git"
+  },
+  "author": "Jannieca Camba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpcamba/NPV-Calculator/issues"
+  },
+  "homepage": "https://github.com/jpcamba/NPV-Calculator#readme",
+  "dependencies": {
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.1.0",
+    "karma-jasmine": "^2.0.1"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^2.2.0"
+  }
+}
