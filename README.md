@@ -1,1 +1,1 @@
-# NPV-Calculator
+# NPV Calculator
