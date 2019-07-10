@@ -38,8 +38,8 @@ function GetGoogleChartsArray(npvResults) {
     return gcArray;
 }
 
-function DrawChart(npvResultsArray) {
-    let chart = new google.visualization.BarChart(document.getElementById('database-chart'));
+function DrawChart(npvResultsArray, chartID) {
+    let chart = new google.visualization.BarChart(document.getElementById(chartID));
     let data = google.visualization.arrayToDataTable(npvResultsArray);
     let options = {
         title: 'Calculated NPVs by Discount Rate Increments',

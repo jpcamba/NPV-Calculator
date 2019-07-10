@@ -31,6 +31,10 @@
     margin-right: 50px;
 }
 
+#calculated-npv-chart {
+    margin-top: 100px;
+}
+
 #database-info {
     font-style: italic;
     margin-top: 50px;

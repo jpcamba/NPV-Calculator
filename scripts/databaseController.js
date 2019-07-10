@@ -12,8 +12,9 @@ $('document').ready(function() {
             $('#database-table-body').html(rowHtml);
 
             $('.database-row').click(function() {
+                let chartID = 'database-chart';
                 let npvResultsArray = GetGoogleChartsArray(npvResult.Results);
-                google.charts.setOnLoadCallback(DrawChart(npvResultsArray));
+                google.charts.setOnLoadCallback(DrawChart(npvResultsArray, chartID));
             });
         }
     });
