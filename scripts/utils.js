@@ -49,3 +49,7 @@ function DrawChart(npvResultsArray) {
 
     chart.draw(data, options);
 }
+
+function GetCurrentTimestamp() {
+    return moment().format('YYYY-MM-DD HH:mm:SS.ss');
+}

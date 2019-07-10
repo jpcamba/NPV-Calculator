@@ -7,7 +7,6 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="./styles/main.css"/>
-        <link rel="stylesheet" href="./styles/text.css"/>
 
        <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -25,7 +24,7 @@
             <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a
-                            class="nav-link active bold"
+                            class="nav-link active tab-title"
                             id="calculator-tab"
                             data-toggle="tab"
                             href="#calculator"
@@ -36,7 +35,7 @@
                     </li>
                     <li class="nav-item">
                         <a
-                            class="nav-link bold"
+                            class="nav-link tab-title"
                             id="database-tab"
                             data-toggle="tab"
                             href="#database"
@@ -52,7 +51,31 @@
                         id="calculator"
                         role="tabpanel"
                         aria-labelledby="calculator-tab"
-                    ></div>
+                    >
+                        <div class="form-group calculator-input">
+                            <label class="form-inline calculator-label"> Initial Value </label>
+                            <input type="number" class="form-control" id="input-initial-value" placeholder="10000">
+                        </div>
+                        <div class="form-group calculator-input">
+                            <label class="form-inline calculator-label"> Cash Flows </label>
+                            <input type="number" class="form-control" id="input-cash-flows" placeholder="1000,1500,2000">
+                        </div>
+                        <div class="form-group calculator-input">
+                            <label class="form-inline calculator-label"> Lower Discount Rate (in %) </label>
+                            <input type="number" class="form-control" id="input-cash-flows" placeholder="1">
+                        </div>
+                        <div class="form-group calculator-input">
+                            <label class="form-inline calculator-label"> Upper Discount Rate (in %) </label>
+                            <input type="number" class="form-control" id="input-cash-flows" placeholder="1.5">
+                        </div>
+                        <div class="form-group calculator-input">
+                            <label class="form-inline calculator-label"> Discount Rate Increment (in %) </label>
+                            <input type="number" class="form-control" id="input-cash-flows" placeholder="0.25">
+                        </div>
+                        <div class="form-group calculator-button">
+                            <button type="button" class="btn btn-primary"> Calculate NPV </button>
+                        </div>
+                    </div>
                     <div
                         class="tab-pane fade card tab-card"
                         id="database"

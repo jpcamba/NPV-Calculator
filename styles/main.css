@@ -2,8 +2,33 @@
     margin: 50px;
 }
 
+.tab-title {
+    color: #0E4D92;
+    font-weight: bold;
+    font-size: 30px;
+}
+
 .tab-card {
-    height: 75vh;
+    min-height: 75vh;
+}
+
+.calculator-input {
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    width: 50%;
+}
+
+.calculator-button {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+    width: 50%;
+}
+
+.calculator-label {
+    margin-right: 50px;
 }
 
 #database-info {
