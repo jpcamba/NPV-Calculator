@@ -59,10 +59,10 @@ function GetDatabaseObject(npv, npvResults) {
     let dbObject = {
         Inputs: {
             CashFlows: npv.CashFlows,
-            DiscountRateIncrement: npv.DiscountRateIncrement,
+            DiscountRateIncrement: npv.DiscountRateIncrement * 100,
             InitialValue: npv.InitialValue,
-            LowerDiscountRate: npv.LowerDiscountRate,
-            UpperDiscountRate: npv.UpperDiscountRate
+            LowerDiscountRate: npv.LowerDiscountRate * 100,
+            UpperDiscountRate: npv.UpperDiscountRate * 100
         },
         Results: [],
         Timestamp: timestamp
