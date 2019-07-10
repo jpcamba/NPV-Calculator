@@ -52,7 +52,7 @@
                         id="calculator"
                         role="tabpanel"
                         aria-labelledby="calculator-tab"
-                    >
+                   >
                         <div class="form-group calculator-input">
                             <label class="form-inline calculator-label"> Initial Value </label>
                             <input type="number" class="form-control" id="input-initial-value" placeholder="10000">
@@ -90,6 +90,21 @@
                         <div id="database-chart"></div>
                     </div>
                 </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="validation-modal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="validationModal"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body"> Inputs are invalid. </div>
+                </div>
+            </div>
         </div>
 
         <!-- Google Firebase -->

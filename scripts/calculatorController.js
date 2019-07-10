@@ -1,6 +1,12 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
 
 function CalculateNPV() {
+    let isInputValid = ValidateInputs();
+    if (!isInputValid) {
+        $('#validation-modal').modal({show: true});
+        return;
+    }
+
     let initialValue = $('#input-initial-value').val();
     let cashFlowsInput = $('#input-cash-flows').val();
     let lowerDiscountRate = $('#input-lower-discount-rate').val();
@@ -30,6 +36,27 @@ function CalculateNPV() {
     google.charts.setOnLoadCallback(DrawChart(chartNpvResultsArray, chartID));
 
     SaveToDatabase(npv, npvResults);
+}
+
+function ValidateInputs() {
+    let initialValue = $('#input-initial-value').val();
+    let cashFlowsInput = $('#input-cash-flows').val();
+    let lowerDiscountRate = $('#input-lower-discount-rate').val();
+    let upperDiscountRate = $('#input-upper-discount-rate').val();
+    let discountRateIncrement = $('#input-discount-rate-increment').val();
+    let cashFlows = cashFlowsInput.split(',');
+
+    if (initialValue === '' || cashFlowsInput === '' || lowerDiscountRate === '' || upperDiscountRate === '' || discountRateIncrement === '') {
+        return false;
+    }
+
+    for (let i = 0; i < cashFlows.length; i++) {
+        if (isNaN(parseInt(cashFlows[i]))) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 function SaveToDatabase(npv, npvResults) {
