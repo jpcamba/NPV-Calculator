@@ -4,6 +4,11 @@ $('document').ready(function() {
     let tableHtml = GetTableHtml();
     $('#database-table').html(tableHtml);
 
+    DisplayPreviousResults();
+});
+
+function DisplayPreviousResults() {
+    $('#database-table-body').html('');
     GetPreviousResults().then(function(npvResults) {
         for (let i = 0; i < npvResults.length; i++) {
             let npvResult = npvResults[i];
@@ -19,4 +24,4 @@ $('document').ready(function() {
             });
         }
     });
-});
+}

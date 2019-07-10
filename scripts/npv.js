@@ -33,9 +33,9 @@ class NPV {
         let discountRates = [this.LowerDiscountRate];
 
         let nextDiscountRate = this.LowerDiscountRate;
-        while (discountRates < this.UpperDiscountRate) {
-            nextDiscountRate += this.DiscountRateIncrement;
+        while (nextDiscountRate < this.UpperDiscountRate) {
             discountRates.push(nextDiscountRate);
+            nextDiscountRate += this.DiscountRateIncrement;
         }
 
         discountRates.push(this.UpperDiscountRate);

@@ -42,6 +42,7 @@
                             role="tab"
                             aria-controls="database"
                             aria-selected="false"
+                            onclick="DisplayPreviousResults()"
                         > Previous Calculations</a>
                     </li>
                 </ul>
@@ -84,7 +85,7 @@
                         role="tabpanel"
                         aria-labelledby="database-tab"
                     >
-                        <div id="database-info" > Click on table row to view calculated NPVs </div>
+                        <div id="database-info"> Click on table row to view calculated NPVs </div>
                         <div id="database-table"></div>
                         <div id="database-chart"></div>
                     </div>
