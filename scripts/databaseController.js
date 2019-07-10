@@ -7,11 +7,12 @@ $('document').ready(function() {
     GetPreviousResults().then(function(npvResults) {
         for (let i = 0; i < npvResults.length; i++) {
             let npvResult = npvResults[i];
+            console.log(npvResult);
             let rowID = i;
             let rowHtml = GetTableRowHtml(rowID, npvResult.Timestamp, npvResult.Inputs);
-            $('#database-table-body').html(rowHtml);
+            $('#database-table-body').append(rowHtml);
 
-            $('.database-row').click(function() {
+            $('.database-row').click(function(element) {
                 let chartID = 'database-chart';
                 let npvResultsArray = GetGoogleChartsArray(npvResult.Results);
                 google.charts.setOnLoadCallback(DrawChart(npvResultsArray, chartID));

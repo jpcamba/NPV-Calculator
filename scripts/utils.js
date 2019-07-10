@@ -53,3 +53,24 @@ function DrawChart(npvResultsArray, chartID) {
 function GetCurrentTimestamp() {
     return moment().format('YYYY-MM-DD HH:mm:SS.ss');
 }
+
+function GetDatabaseObject(npv, npvResults) {
+    let timestamp = GetCurrentTimestamp();
+    let dbObject = {
+        Inputs: {
+            CashFlows: npv.CashFlows,
+            DiscountRateIncrement: npv.DiscountRateIncrement,
+            InitialValue: npv.InitialValue,
+            LowerDiscountRate: npv.LowerDiscountRate,
+            UpperDiscountRate: npv.UpperDiscountRate
+        },
+        Results: [],
+        Timestamp: timestamp
+    };
+
+    for (let i = 0; i < npvResults.length; i++) {
+        dbObject.Results.push(npvResults[i]);
+    }
+
+    return dbObject;
+}

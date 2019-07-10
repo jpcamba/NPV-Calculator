@@ -17,3 +17,7 @@ async function GetPreviousResults() {
         return snapshot.val();
     });
 }
+
+async function SaveResult(newResults) {
+    return database.set(newResults);
+}
