@@ -1,0 +1,24 @@
+.main {
+    margin: 50px;
+}
+
+.tab-card {
+    height: 75vh;
+}
+
+#database-info {
+    font-style: italic;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#database-table {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: table;
+    text-align: center;
+}
+
+#database-chart {
+    margin-top: 50px;
+}

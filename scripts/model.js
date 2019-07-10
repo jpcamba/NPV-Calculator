@@ -11,3 +11,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database().ref().child('NPV');
+
+async function GetPreviousResults() {
+    return database.once('value').then(function(snapshot) {
+        return snapshot.val();
+    });
+}
