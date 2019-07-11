@@ -1,10 +1,10 @@
-function GetTableHtml() {
+function GetDatabaseTableHtml() {
     let html = '<table class="table table-striped" style="text-align:center">'
     html += '<thead>';
     html +=     '<tr>';
     html +=         '<th> Timestamp </th>';
     html +=         '<th> Initial Value </th>';
-    html +=         '<th> Cash Flows </th>';
+    html +=         '<th style="max-width:300px"> Cash Flows </th>';
     html +=         '<th> Lower Bound Discount Rate (in %) </th>';
     html +=         '<th> Upper Discount Rate (in %) </th>';
     html +=         '<th> Discount Rate Increment (in %) </th>';
@@ -16,14 +16,36 @@ function GetTableHtml() {
     return html;
 }
 
-function GetTableRowHtml(rowID, timestamp, npvInputs) {
+function GetDatabaseTableRowHtml(rowID, timestamp, npvInputs) {
     let html = '<tr class="database-row" id="' + rowID + '">';
     html += '<th scope="row">' + timestamp + '</th>';
     html += '<td>' + npvInputs.InitialValue + '</td>';
-    html += '<td>' + npvInputs.CashFlows + '</td>';
+    html += '<td style="max-width:300px">' + npvInputs.CashFlows + '</td>';
     html += '<td>' + npvInputs.LowerDiscountRate + '</td>';
     html += '<td>' + npvInputs.UpperDiscountRate + '</td>';
     html += '<td>' + npvInputs.DiscountRateIncrement + '</td>';
+    html += '</tr>';
+    return html;
+}
+
+function GetResultTableHtml() {
+    let html = '<table class="table table-striped" style="text-align:center; max-width: 700px">'
+    html += '<thead>';
+    html +=     '<tr>';
+    html +=         '<th> Calculated NPV </th>';
+    html +=         '<th> Discount Rate (in %) </th>';
+    html +=     '</tr>';
+    html += '</thead>';
+    html += '<tbody id="database-result-table-body">';
+    html += '</tbody>';
+    html += '</table>';
+    return html;
+}
+
+function GetResultTableRowHtml(npvResult) {
+    let html = '<tr class="database-row">';
+    html += '<td>' + npvResult.CalculatedNPV + '</td>';
+    html += '<td>' + npvResult.DiscountRate * 100 + '</td>';
     html += '</tr>';
     return html;
 }
@@ -73,4 +95,8 @@ function GetDatabaseObject(npv, npvResults) {
     }
 
     return dbObject;
+}
+
+function inArray(element, array) {
+    return array.indexOf(element) >= 0;
 }

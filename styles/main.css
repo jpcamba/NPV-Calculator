@@ -41,7 +41,7 @@
     text-align: center;
 }
 
-#database-table {
+.previous-results-table {
     margin: 0 auto;
     margin-top: 50px;
     display: table;
