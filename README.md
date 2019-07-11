@@ -6,6 +6,9 @@ NPV Calculator will accept an initial value, cash flows, lower and upper bound d
 * Cash Flows - Comma-separated numbers (e.g. 1000,2000,3000)
 * Discount Rates (Lower Bound, Upper Bound, Increment) - In percent (e.g. 100 instead of 1)
 
+### Features
+Aside from the calculator, there is another tab "Previous Calculations" where one can access all the previous calculations. It will display a table of the inputs, and each row can be clicked to show a chart and table of the calculated NPV for a specific discount rate.
+
 ### Tech Stack
 * JavaScript
 * HTML/CSS
