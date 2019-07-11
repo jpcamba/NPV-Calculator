@@ -13,4 +13,7 @@ NPV Calculator will accept an initial value, cash flows, lower and upper bound d
 * Google Charts
 * Bootstrap
 
+### Unit Tests
+There are unit tests for the basic core NPV functionalities at https://github.com/jpcamba/NPV-Calculator/tree/master/tests. The packages jasmine-core, karma, and karma-jasmine need to be separately installed. To kick-off the tests, navigate to `node_modules/.bin` and run the command `karma start ../../karma.conf.js`.
+
 Website is deployed at https://jpcamba.github.io/NPV-Calculator/.
