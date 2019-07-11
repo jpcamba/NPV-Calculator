@@ -113,7 +113,3 @@ function GetDatabaseObject(npv, npvResults) {
 
     return dbObject;
 }
-
-function inArray(element, array) {
-    return array.indexOf(element) >= 0;
-}

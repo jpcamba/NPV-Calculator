@@ -34,16 +34,21 @@ class NPV {
 
         let nextDiscountRate = this.LowerDiscountRate;
         while (nextDiscountRate < this.UpperDiscountRate) {
-            if (!inArray(nextDiscountRate, discountRates)) {
+            if (!this.inArray(nextDiscountRate, discountRates)) {
                 discountRates.push(nextDiscountRate);
             }
             nextDiscountRate += this.DiscountRateIncrement;
         }
 
-        if (!inArray(this.UpperDiscountRate, discountRates)) {
+        if (!this.inArray(this.UpperDiscountRate, discountRates)) {
             discountRates.push(this.UpperDiscountRate);
         }
 
         return discountRates;
+    }
+
+    // Private functions
+    inArray(element, array) {
+        return array.indexOf(element) >= 0;
     }
 }
