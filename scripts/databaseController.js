@@ -16,22 +16,11 @@ function DisplayPreviousResults() {
             let rowHtml = GetDatabaseTableRowHtml(rowID, npvResult.Timestamp, npvResult.Inputs);
             $('#database-table-body').append(rowHtml);
 
-            $('.database-row').click(function(element) {
+            $('.database-row').unbind().click(function(element) {
                 let rowIndex = parseInt(element.currentTarget.id);
                 let chartID = 'database-chart';
-                let npvResultsArray = GetGoogleChartsArray(npvResults[rowIndex].Results);
-                google.charts.setOnLoadCallback(DrawChart(npvResultsArray, chartID));
-                $('#database-chart').append('<div id="database-info"> Chart may be inaccurate for very small or very large values </div>');
-
-                $('#database-result-table').html('');
-                let resultTableHtml = GetResultTableHtml();
-                $('#database-result-table').html(resultTableHtml);
-
-                for (let j = 0; j < npvResults[rowIndex].Results.length; j++) {
-                    let npvRowResult = npvResults[rowIndex].Results[j];
-                    let resultRowHtml = GetResultTableRowHtml(npvRowResult);
-                    $('#database-result-table-body').append(resultRowHtml);
-                }
+                let tableID = 'database-result-table';
+                DisplayResultChartAndTable(npvResults[rowIndex].Results, chartID, tableID);
             });
         }
     });

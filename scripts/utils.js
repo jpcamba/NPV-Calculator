@@ -28,7 +28,7 @@ function GetDatabaseTableRowHtml(rowID, timestamp, npvInputs) {
     return html;
 }
 
-function GetResultTableHtml() {
+function GetResultTableHtml(tableBodyID) {
     let html = '<table class="table table-striped" style="text-align:center; max-width: 700px">'
     html += '<thead>';
     html +=     '<tr>';
@@ -36,7 +36,7 @@ function GetResultTableHtml() {
     html +=         '<th> Discount Rate (in %) </th>';
     html +=     '</tr>';
     html += '</thead>';
-    html += '<tbody id="database-result-table-body">';
+    html += '<tbody id="' + tableBodyID + '">';
     html += '</tbody>';
     html += '</table>';
     return html;
@@ -70,6 +70,23 @@ function DrawChart(npvResultsArray, chartID) {
     };
 
     chart.draw(data, options);
+}
+
+function DisplayResultChartAndTable(npvResults, chartID, tableID) {
+    let npvResultsArray = GetGoogleChartsArray(npvResults);
+    google.charts.setOnLoadCallback(DrawChart(npvResultsArray, chartID));
+    $('#' + chartID).append('<div id="database-info"> Chart may be inaccurate for very small or very large values </div>');
+
+    $('#' + tableID).html('');
+    let resultTableBodyID = tableID + '-body';
+    let resultTableHtml = GetResultTableHtml(resultTableBodyID);
+    $('#' + tableID).html(resultTableHtml);
+
+    for (let j = 0; j < npvResults.length; j++) {
+        let npvRowResult = npvResults[j];
+        let resultRowHtml = GetResultTableRowHtml(npvRowResult);
+        $('#' + resultTableBodyID).append(resultRowHtml);
+    }
 }
 
 function GetCurrentTimestamp() {

@@ -32,8 +32,8 @@ function CalculateNPV() {
     }
 
     let chartID = 'calculated-npv-chart';
-    let chartNpvResultsArray = GetGoogleChartsArray(chartNpvResults);
-    google.charts.setOnLoadCallback(DrawChart(chartNpvResultsArray, chartID));
+    let tableID = 'calculated-npv-table';
+    DisplayResultChartAndTable(chartNpvResults, chartID, tableID);
 
     SaveToDatabase(npv, npvResults);
 }
